@@ -1,5 +1,5 @@
-import { Rectangle } from "./demo_shape_controller/control/rectangle";
-import { Triangle } from "./demo_shape_controller/control/triangle";
+import { Rectangle } from "../app/domain/classes/rectangle";
+import { Triangle } from "../app/domain/classes/triangle";
 
 //import { describe, test, expect } from 'vitest'
 const tri = new Triangle(2, 6);

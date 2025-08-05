@@ -13,8 +13,7 @@ export default defineConfig({
     },
     globals: true,
     environment: "jsdom",
-
-    include: ["./src/_tests_/*", "./src/external.demo.two.ts"],
+    //include: ["./src/*"], //this will exclude all *.specs.ts and *.test.ts
     //exclude:['./src/_tests_/fileII.test.ts"'],
     //setupFiles: [ "./src/_tests_/fileII.test.ts","./src/external.demo.two.ts","./src/external.demo.one.ts","./src/_tests_/fileI.spec.ts"],
     css: true,
