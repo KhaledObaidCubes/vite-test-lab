@@ -1,5 +1,5 @@
-import type { ITreeNode } from "../interfaces/i-TreeNode";
-import type { TNode, TJson } from "../interfaces/i-types";
+import type { ITreeNode } from "../../domain/contract/i-TreeNode";
+import type { TNode, TJson } from "../../domain/contract/i-types";
 import { v4 as uuidv4 } from "uuid";
 import {
   flattTree,
@@ -7,7 +7,7 @@ import {
   drawTree,
   drawTreeWithInfo,
   updateNodesParent,
-} from "../tree-sublementry";
+} from "../../domain/utils/tree-sublementry";
 
 class TreeNode implements ITreeNode {
   data: TNode;

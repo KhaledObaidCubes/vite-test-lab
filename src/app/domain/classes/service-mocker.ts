@@ -2,7 +2,7 @@ import axios from "axios";
 
 //you can use the following code to simulate data receive throttling
 axios.interceptors.request.use(async (config) => {
-  await new Promise((res) => setTimeout(res, 1)); // delay every request by 5s
+  await new Promise((res) => setTimeout(res, 10)); // delay every request by 5s
   return config;
 });
 
@@ -30,6 +30,23 @@ const fetchPersons = async (): Promise<IPerson[]> => {
   }
 };
 
+/////////////////////////////////////////////
+const fetchPersonsII = (delay = 1): Promise<IPerson[]> => {
+  return new Promise((resolve) => {
+    setTimeout(async () => {
+      try {
+        const response = await axios.get<IPerson[]>(
+          "https://654b92025b38a59f28ef5698.mockapi.io/person"
+        );
+        resolve(response.data);
+      } catch (error) {
+        console.error("Error fetching persons:", error);
+        resolve([]); // Resolve with empty array on error
+      }
+    }, delay);
+  });
+};
+
 // Example usage
 // fetchPersons().then((people): object => {
 //   console.log("Fetched persons:", people);
@@ -45,4 +62,4 @@ const delayedSum = async (a: number, b: number): Promise<number> => {
   });
 };
 
-export { fetchPersons, delayedSum };
+export { fetchPersons, fetchPersonsII, delayedSum };

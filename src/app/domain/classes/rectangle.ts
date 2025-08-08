@@ -19,12 +19,6 @@ class Rectangle implements IRectangle {
   isSquare(): boolean {
     return this.width === this.height;
   }
-
-  infoLogger(msg: string): void {
-    console.log(
-      `my rect ${msg} have widht= ${this.width}\nand have height= ${this.height}`
-    );
-  }
 }
 
 export { Rectangle };

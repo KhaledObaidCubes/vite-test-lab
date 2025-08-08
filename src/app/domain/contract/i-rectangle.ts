@@ -7,8 +7,6 @@ interface IRectangle {
   perimeter(): number;
 
   isSquare(): boolean;
-
-  infoLogger(msg: string): void;
 }
 
 export type { IRectangle };

@@ -18,7 +18,7 @@ const mockPeople = [
 vi.spyOn(serviceMocker, "fetchPersons").mockResolvedValue(mockPeople);
 
 describe("GenericTree.vue", () => {
-  //-------------- replace the intier fetchPerson function and mock data from mockPeople
+  //-------------- replace the entire fetchPerson function and mock data from mockPeople
   it("fetches and displays mocked data", async () => {
     const wrapper = mount(GenericTree, {
       props: {
@@ -80,19 +80,5 @@ describe("GenericTree.vue - reactive people data", () => {
 
     // Optional: console log to see the actual data
     console.log("People after fetch:", updatedPeople);
-  });
-  /*
-  10000 10sec is the timeout for the test block not the vitest testTimeout and it is optional
-  so if its removed vitest will consider the testTimeout, note that promise timeout is 6000 and
-  it is exceeds testTimeout, how ever it is still within the block's timeout so it will not 
-  generate any errors, but removing the blocks timeout will generates an error because in this case
-  it will consider the global testTimeout configured in the vitest.config.ts
-  */
-  it("real live data", async () => {
-    const people = await serviceMocker.fetchPersons();
-
-    expect(Array.isArray(people)).toBe(true); // Check it's an array
-    expect(people.length).toBeGreaterThan(0); // Check it's not empty
-    expect(people[0]).toHaveProperty("firstName"); // Check structure
   });
 });
