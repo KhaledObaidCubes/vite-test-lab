@@ -1,15 +1,18 @@
 <template>
-  <h1>TREE CONTROLLER</h1>
-  <p><strong>YOU ARE ON:</strong> {{ $route.fullPath }}</p>
-  <nav>
-    <RouterLink class="link" to="/">Tree Manager</RouterLink>
-
-    <hr />
-  </nav>
-  <main>
+  <div class="main-menu">
+    <main-menu />
+  </div>
+  <div class="page-body">
     <RouterView />
-  </main>
+  </div>
 </template>
+<script setup lang="ts">
+import { defineAsyncComponent } from "vue";
+
+const MainMenu = defineAsyncComponent(
+  () => import("./app/presentation/components/menu.vue")
+);
+</script>
 <style lang="css" scoped>
 .link {
   margin-left: 20px;
@@ -18,5 +21,11 @@
 }
 .link:hover {
   color: crimson;
+}
+.main-menu,
+.page-body {
+  margin-top: 40px;
+  float: left;
+  width: 100%;
 }
 </style>

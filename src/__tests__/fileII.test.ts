@@ -6,7 +6,7 @@ const tri = new Triangle(2, 6);
 const rect = new Rectangle(2, 5);
 describe("File II start test", () => {
   test("test Rectangle area method", () => {
-    expect(rect.area()).toBe(1110);
+    expect(rect.area()).toBe(10);
   });
   test("test Triangle area method", () => {
     expect(tri.area()).toBe(6);

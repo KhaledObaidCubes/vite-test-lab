@@ -1,23 +1,17 @@
-import type { TreeNode } from "../classes/TreeNode";
-
-type TNode = {
+type TPerson = {
   id: string;
-  name: string;
-  children: TreeNode[];
+  firstName: string;
+  lastName: string;
+  age: number;
+  email: string;
+  phone: string; // optional
+  address: {
+    street: string;
+    city: string;
+    country: string;
+  };
+  createdAt: string; // ISO date
+  updatedAt: string; // optional for testing updates
 };
-
-type TJson = {
-  name: string;
-  id: string;
-  depth: number | undefined;
-  indexInParent: number;
-  children: any[];
-};
-
-type TTreeJson = {
-  [key: string]: any;
-  children: TTreeJson[];
-};
-
-type TCheckedTree = { checked: boolean; indeterminate: boolean };
-export type { TNode, TJson, TTreeJson, TCheckedTree };
+type TData = { data: TPerson[]; total: number };
+export type { TPerson, TData };
