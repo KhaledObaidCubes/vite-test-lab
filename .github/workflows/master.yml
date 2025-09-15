@@ -1,0 +1,67 @@
+
+# This workflow will build and test a vue frontend application for PoC
+
+name: CI/CD PoC Pipeline
+
+# Listen to events
+# Every time someone pushes code or creates a pull request to the master branch
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+# build is the name of the job, you can name it anything
+
+# runs on ubuntu, Windows and MacOS are available, you can choose any of them
+
+# actions is the offical GitHub account for actions, checkout is the name of the action it is defined as a repository which contain action.yml file
+# you can use other actions created by the community as well or create your own actions as well using the "uses:" keyword
+
+# if you are running action use action, if you run a command-line command use run
+
+jobs:
+  build:
+    # for testing on multiple OS
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build project
+        run: npm run build:prod
+
+  # docker:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Login to Docker Hub
+  #       uses: docker/login-action@v3
+  #       with:
+  #         username: ${{ vars.DOCKERHUB_USERNAME }}
+  #         password: ${{ secrets.DOCKERHUB_TOKEN }}
+  #     - name: Set up Docker Buildx
+  #       uses: docker/setup-buildx-action@v3
+  #     - name: Build and push
+  #       uses: docker/build-push-action@v6
+  #       with:
+  #         push: true
+  #         tags: ${{ vars.DOCKERHUB_USERNAME }}/frontend:latest
+
+  # Add more steps as needed, e.g., push to a container registry, deploy, etc.
