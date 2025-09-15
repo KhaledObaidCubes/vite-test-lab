@@ -1,17 +1,14 @@
-import {
-  delayedSum,
-  fetchPersonsII,
-} from "../../domain/classes/service-mocker";
+import { delayedSum, fetchPersons } from "../../domain/classes/service-mocker";
 
 describe("", () => {
   it("should return an array of persons from the API", async () => {
-    const people = await fetchPersonsII(10); // use shorter delay for test
+    const people = await fetchPersons(10); // use shorter delay for test
 
-    expect(Array.isArray(people)).toBe(true);
-    expect(people.length).toBeGreaterThan(0);
+    expect(Array.isArray(people.data)).toBe(true);
+    expect(people.data.length).toBeGreaterThan(0);
     console.log(people);
 
-    expect(people[0]).toHaveProperty("firstName");
+    expect(people.data[0]).toHaveProperty("firstName");
   }); // Allow extra time for the async call
 
   test("testing the delay function using await", async () => {
