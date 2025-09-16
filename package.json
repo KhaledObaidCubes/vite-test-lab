@@ -49,6 +49,8 @@
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.2.4",
     "vue-tsc": "^2.2.12",
-    "json-server": "^1.0.0-beta.3"
+    "json-server": "^1.0.0-beta.3",
+    "start-server-and-test": "^2.0.8",
+    "wait-on": "^7.2.0"
   }
 }
