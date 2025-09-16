@@ -10,7 +10,8 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
-    "safe-build": "vitest run && npm run build"
+    "safe-build": "vitest run && npm run build",
+    "start-back-end": "npx json-server db.json"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "vite": "^7.0.4",
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.2.4",
-    "vue-tsc": "^2.2.12"
+    "vue-tsc": "^2.2.12",
+    "json-server": "^1.0.0-beta.3"
   }
 }
