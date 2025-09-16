@@ -43,7 +43,7 @@ jobs:
         run: npm install
         
       - name: Start JSON Server
-        run: npm start-back-end
+        run: npm run start-back-end
 
       - name: Run tests
         run: npm test
