@@ -45,8 +45,8 @@ jobs:
       - name: Start JSON Server
         run: npm run start-back-end
 
-      - name: Run tests
-        run: npm test
+      - name: Run tests (with json-server)
+        run: npm run test:with-backend
 
       - name: Build project
         run: npm run build:prod
