@@ -1,4 +1,4 @@
-import { describe, it, test } from "vitest";
+//import { describe, it, test } from "vitest";
 import ListController from "@app/domain/classes/list-controller";
 
 const listController = new ListController();
@@ -9,9 +9,10 @@ describe("getFullName", () => {
       "Khaled Obaid"
     );
   });
-  test("instance the method it self", () => {
+  it("instance the method it self", () => {
     const pool = new ListController();
+    const person = { firstName: "Khaled", lastName: "Obaid" };
     const newFunc = pool.getFullName;
-    expect(newFunc("Khaled", "Obaid")).toBe("Khaled Obaid");
+    expect(newFunc(person.firstName, person.lastName)).toBe("Khaled Obaid");
   });
 });

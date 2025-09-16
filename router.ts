@@ -6,15 +6,15 @@ import EditUser from "./src/app/presentation/pages/edit-user.vue";
 import UserInfo from "./src/app/presentation/pages/user-details.vue";
 
 const routes = [
-  { path: "/", name: "View USERS", component: UsersList },
+  { path: "/", name: "View Users", component: UsersList },
   {
     path: "/create-user",
-    name: "New user",
+    name: "New User",
     component: CreateUser,
   },
   {
     path: "/edit-user",
-    name: "Edit user",
+    name: "Edit User",
     component: EditUser,
   },
   {

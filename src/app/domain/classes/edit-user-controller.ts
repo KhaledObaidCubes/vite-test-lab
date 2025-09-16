@@ -28,4 +28,15 @@ export default class EditUserController
     await editPerson(id, person, delay);
     this.isBusy = false;
   }
+  async getDataWithDelay(personID: string, delayPeriod: number = 10) {
+    this.isBusy = true;
+
+    const result = await fetchPerson(personID);
+
+    // introduce a 5s delay before returning
+    await new Promise((resolve) => setTimeout(resolve, delayPeriod));
+
+    this.isBusy = false;
+    return result;
+  }
 }

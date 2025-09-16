@@ -7,8 +7,8 @@ const UsersList = { template: "<div>Users List</div>" };
 const CreateUser = { template: "<div>Create User</div>" };
 
 const routes = [
-  { path: "/", name: "View USERS", component: UsersList },
-  { path: "/create-user", name: "New user", component: CreateUser },
+  { path: "/", name: "View Users", component: UsersList },
+  { path: "/create-user", name: "New User", component: CreateUser },
 ];
 
 const router = createRouter({
@@ -32,8 +32,8 @@ describe("Navigator.vue", () => {
     expect(items.length).toBe(2); // only first 2 routes
 
     // Check route names
-    expect(items[0].text()).toContain("View USERS");
-    expect(items[1].text()).toContain("New user");
+    expect(items[0].text()).toContain("View Users");
+    expect(items[1].text()).toContain("New User");
 
     // Check active/none-active classes
     expect(items[0].classes()).toContain("active-item");

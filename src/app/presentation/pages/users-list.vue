@@ -51,7 +51,7 @@
         </div>
         <div class="actions">
           <RouterLink
-            :to="{ name: 'Edit user', query: { id: user.id } }"
+            :to="{ name: 'Edit User', query: { id: user.id } }"
             class="page-link"
             >Edit</RouterLink
           >
