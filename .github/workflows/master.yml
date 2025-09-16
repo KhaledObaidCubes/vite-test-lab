@@ -49,7 +49,7 @@ jobs:
         run: npm test
 
       - name: Build project
-        run: npm run build:prod
+        run: npm run build
 
   # docker:
   #   runs-on: ubuntu-latest
