@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div v-if="listController.showSpinner"><Spinner /></div>
-    <div v-if="!listController.showSpinner && !listController.users.total">
+    <div v-if="!listController.showSpinner && !listController.users?.total">
       NO Data
     </div>
     <div
-      v-if="!listController.showSpinner && !!listController.users.data.length"
+      v-if="!listController.showSpinner && !!listController.users?.data?.length"
     >
       <div class="flex items-center gap-3 p-2 border-b">
         <input
