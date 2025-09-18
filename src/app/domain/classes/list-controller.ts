@@ -136,4 +136,7 @@ export default class ListController implements IListController {
   getFullName(fname: string, lname: string) {
     return `${fname} ${lname}`;
   }
+  getFullNameSS(fname: string, lname: string) {
+    return `${fname} ${lname}`;
+  }
 }

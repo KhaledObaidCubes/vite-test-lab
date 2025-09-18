@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
+    "test:snapshotUpdate": "vitest -u",
     "test:coverage": "vitest --coverage",
     "safe-build": "vitest run && npm run build",
     "start-back-end": "json-server --watch db.json --port 3000",

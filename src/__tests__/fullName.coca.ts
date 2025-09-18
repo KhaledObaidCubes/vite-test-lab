@@ -15,4 +15,10 @@ describe("getFullName", () => {
     const newFunc = pool.getFullName;
     expect(newFunc(person.firstName, person.lastName)).toBe("Khaled Obaid");
   });
+  it("instance the method it self", () => {
+    const pool = new ListController();
+    const person = { firstName: "Khaled", lastName: "Obaid" };
+    const newFunc = pool.getFullName;
+    expect(newFunc(person.firstName, person.lastName)).not.toBe("Khaled ttt");
+  });
 });

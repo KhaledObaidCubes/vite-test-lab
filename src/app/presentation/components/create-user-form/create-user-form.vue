@@ -3,8 +3,11 @@
     id="app"
     class="w-full max-w-2xl bg-white rounded-xl shadow-lg p-8 space-y-8"
   >
-    <h1 class="text-3xl font-bold text-center text-gray-800">
-      {{ formTitle }}
+    <h1
+      id="create-user-form-title"
+      class="text-3xl font-bold text-center text-gray-800"
+    >
+      {{ `${formTitle}` }}
     </h1>
 
     <div class="space-y-6">

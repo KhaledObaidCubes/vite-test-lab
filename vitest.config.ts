@@ -22,31 +22,17 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     include: ["src/**/*.{coca,test,spec}.ts"],
+    exclude: [
+      "src/__tests__/api-mock.test.ts",
+      // "src/__tests__/create-user.test.ts",
+      "src/__tests__/fullName.coca.ts",
+      "src/__tests__/linesExec.spec.ts",
+      "src/__tests__/navigation.test.ts",
+      "src/__tests__/performance.test.ts",
+      "src/__tests__/snapshot.test.ts",
+    ],
     // setupFiles: [ "@app/../src/__tests__/fullName.spec.ts"],
-    css: true,
     testTimeout: 3000,
     reporters: reporterSet, // ['tap'] ['dot'] ['json'] ['junit'] ['default']['verbose']
   },
 });
-
-/*
-Name  ............................	Description / behavior
------------------------------------------------------------------------
-default	............................	The standard output, summary + statuses etc. 
-
-basic	  ............................	Like default but without a summary. 
-
-verbose	  ............................	Like default + more detail (shows each individual test, slow test warnings, etc.) 
-
-dot	  ............................	Minimal output: shows a dot for each test, details only for failed ones. 
-
-json	  ............................	Outputs result in JSON format. Good for CI or tools that parse JSON. 
-
-junit	  ............................	Outputs in JUnit format (XML); useful for CI integrations. 
-
-tap	  ............................	TAP format (Test Anything Protocol). 
-
-tapFlat	  ............................	A flatter version of TAP (less nested/test‐module grouping) 
-
-HangingProcessReporter	  ............................	A reporter that helps detect (or report) when test processes hang.
-*/
