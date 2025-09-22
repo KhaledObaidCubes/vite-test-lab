@@ -34,7 +34,7 @@ describe("CreateUserForm.vue", () => {
 
   it("renders form with title", () => {
     const wrapper = mount(CreateUserForm, {
-      props: { formTitle: "Create new USER" },
+      props: { formTitle: "Create new USER", id: "456tyu" },
     });
     //const h1Tag = wrapper.find("#create-user-form-title");
     //expect(h1Tag.text()).toBe("Create new USER");
