@@ -4,6 +4,7 @@ import UsersList from "./src/app/presentation/pages/users-list.vue";
 import CreateUser from "./src/app/presentation/pages/create-user.vue";
 import EditUser from "./src/app/presentation/pages/edit-user.vue";
 import UserInfo from "./src/app/presentation/pages/user-details.vue";
+import Example from "./src/app/presentation/pages/emit-provide-example.vue";
 
 const routes = [
   { path: "/", name: "View Users", component: UsersList },
@@ -11,6 +12,11 @@ const routes = [
     path: "/create-user",
     name: "New User",
     component: CreateUser,
+  },
+  {
+    path: "/example",
+    name: "Example",
+    component: Example,
   },
   {
     path: "/edit-user",

@@ -7,7 +7,7 @@
       id="create-user-form-title"
       class="text-3xl font-bold text-center text-gray-800"
     >
-      {{ `${formTitle}` }}
+      {{ `55${formTitle}55` }}
     </h1>
 
     <div class="space-y-6">

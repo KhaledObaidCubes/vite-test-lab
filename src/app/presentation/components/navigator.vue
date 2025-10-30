@@ -2,7 +2,7 @@
   <nav>
     <template v-for="(item, idx) in $router.getRoutes()"
       ><div
-        v-if="idx <= 1"
+        v-if="idx <= 2"
         class="menu-item"
         :class="{
           'active-item': $route.fullPath === item.path,

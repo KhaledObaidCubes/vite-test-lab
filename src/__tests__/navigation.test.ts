@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 import { createRouter, createWebHashHistory } from "vue-router";
-import Navigator from "../app/presentation/components/navigator.vue";
+import Navigator from "@app/presentation/components/navigator.vue";
 
 // Mock pages
 const UsersList = { template: "<div>Users List</div>" };
@@ -41,20 +41,19 @@ describe("Navigator.vue", () => {
   });
 
   it("highlights correct menu item when route changes", async () => {
-    router.push("/create-user");
-    await router.isReady();
-
     const wrapper = mount(Navigator, {
       global: {
         plugins: [router],
       },
     });
+    router.push("/create-user");
+    await router.isReady();
 
     const items = wrapper.findAll(".menu-item");
     console.log("create user->", items[0].classes());
     console.log("create user->", items[1].classes());
-    expect(items[0].classes()).not.toContain("none-active-item");
+    expect(items[0].classes()).not.toContain("active-item");
     expect(items[0].classes()).toContain("menu-item");
-    expect(items[1].classes()).not.toContain("active-item");
+    expect(items[1].classes()).not.toContain("none-active-item");
   });
 });
